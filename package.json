@@ -1,0 +1,12 @@
+{
+  "name": "trv-schedule-card",
+  "private": true,
+  "description": "Weekly schedule editor card for the SONOFF TRV-ZBL in Home Assistant",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --check trv-schedule-card.js && node tests/smoke.test.js"
+  },
+  "devDependencies": {
+    "jsdom": "24.1.3"
+  }
+}
