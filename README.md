@@ -6,7 +6,7 @@ The valve stores each day as a line of text such as `00:00/16 06:00/19 22:00/16`
 
 ![Weekly schedule card](docs/screenshot.png)
 
-[![Open your Home Assistant instance and open this repository in the Marketplace.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ifi-smarthome&repository=trv-schedule-card&category=plugin)
+[![Open your Home Assistant instance and show this repository in the Marketplace.](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=ifi-smarthome&repository=trv-schedule-card&category=plugin)
 
 ## Features
 
@@ -27,21 +27,27 @@ The valve stores each day as a line of text such as `00:00/16 06:00/19 22:00/16`
 
 ## Installation
 
-### Option A: Marketplace (Home Assistant 2026.11 and newer) or HACS
+### Option A: Marketplace (Home Assistant 2026.11 and newer)
 
-1. Click the **Open in Home Assistant** button at the top of this page, or add the repository by hand:
-   - **Marketplace**: Settings → Marketplace → ⋮ → **Custom repositories**
-   - **HACS** (Home Assistant 2026.10 and older): HACS → ⋮ → **Custom repositories**
+1. Click the **Open in Home Assistant** button at the top of this page, or add the repository by hand under **Settings → Marketplace → Add from link**:
+   - Link: `https://github.com/ifi-smarthome/trv-schedule-card`
+   - Type: **Dashboard**
+2. Open **TRV-ZBL Schedule Card** and choose **Install**.
+3. Reload the browser (Ctrl+Shift+R or Cmd+Shift+R).
 
-   Repository: `https://github.com/ifi-smarthome/trv-schedule-card`, type: **Dashboard**.
-2. Open **TRV-ZBL Schedule Card** and download it.
-3. Reload the browser.
+The Marketplace adds the dashboard resource for you, and new versions show up under **Settings → Updates**. If you manage dashboard resources in YAML, the install dialog shows the line to add instead.
 
-The resource is added automatically, and new versions show up under **Settings → Updates**.
+Adding a repository by link asks you to connect a GitHub account once. Once the card is part of the default catalog, you will find it by searching in the Marketplace, and no GitHub account is needed.
 
-Adding a custom repository asks you to connect a GitHub account. Once the card is part of the default catalog, it can be found and installed directly without that step.
+Coming from HACS? Home Assistant 2026.11 moves your HACS installs into the Marketplace automatically. The card stays installed and keeps receiving updates.
 
-### Option B: Manual installation
+### Option B: HACS (Home Assistant 2026.10 and older)
+
+1. In HACS, open **⋮ → Custom repositories**.
+2. Repository: `https://github.com/ifi-smarthome/trv-schedule-card`, type: **Dashboard**.
+3. Open **TRV-ZBL Schedule Card**, download it and reload the browser.
+
+### Option C: Manual installation
 
 1. Download `trv-schedule-card.js` from the [latest release](https://github.com/ifi-smarthome/trv-schedule-card/releases/latest) and copy it to `/config/www/`. If the `www` folder did not exist before, create it and restart Home Assistant once.
 2. Go to **Settings → Dashboards → ⋮ → Resources → Add resource** and enter:
@@ -138,7 +144,10 @@ The selected climate entity does not belong to a TRV-ZBL, or the schedule entiti
 The card shows the text it received. Saving replaces it with a valid schedule.
 
 **The card still shows an old version after an update**
-With a manual installation, increase the number at the end of the resource URL, e.g. `?v=2`. In all cases, reload the browser without cache.
+Reload the browser without cache. With a manual installation, also increase the number at the end of the resource URL, e.g. `?v=2`. Marketplace and HACS do that for you.
+
+**The Marketplace refuses to install the card**
+The Marketplace stores cards in a folder named after the repository. If a card with the same repository name `trv-schedule-card` from another owner is installed, remove that one first.
 
 ## Contributing
 
